@@ -53,6 +53,7 @@ Si no sabes que shell tienes, puedes usar el comando
 `echo "/ruta/a/SetTarget_Shell/settarget" >> ~/.bashrc`
 #### Zsh
 `echo "/ruta/a/SetTarget_Shell/settarget" >> ~/.zshrc`
+
 ( O haz un `cat  settarget` y copia la función hasta abajo de tu archivo de la shell .bashrc o .zshrc )
 
 ### luego recarga la terminal
