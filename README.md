@@ -1,4 +1,4 @@
-
+![Texto alternativo](./settarget.png)
 # SetTarget — función de terminal
 
 **SetTarget** — función shell ligera para gestionar un *target* desde la terminal mostrando IP y nombre de máquina directamente encima del prompt. Ideal si no usas Polybar o quieres un prompt informativo rápido.
