@@ -135,20 +135,6 @@ Crear alias/wrappers útiles:
     ssh "$ip" else  echo  "No hay target definido."  fi }
 ```
 
-
-
-## Contribuciones
-
-Si quieres mejorar la función (validaciones, soporte para más campos, integración con Polybar, wrappers):
-
-1.  Forkea el repo.
-    
-2.  Crea una rama: `git checkout -b feat/nombre`.
-    
-3.  Haz commits claros.
-    
-4.  Abre un Pull Request describiendo los cambios.
-
 ---
 ## Changelog
 
