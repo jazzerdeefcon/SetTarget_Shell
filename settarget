@@ -1,0 +1,34 @@
+#==============
+#FUNCION SETTARGET
+#==============
+
+# --- Función para guardar el target ---
+function settarget() {
+    ip_address=$1
+    machine_name=$2
+    echo "$ip_address $machine_name" > ~/.config/bin/target
+}
+
+# --- Función para limpiar o quitar el target ---
+function cleartarget() {
+    rm -f ~/.config/bin/target
+}
+
+# --- Mostrar el target encima del prompt ---
+show_target() {
+    if [ -f ~/.config/bin/target ]; then
+        read ip name < ~/.config/bin/target
+        echo "[${ip} - ${name}]"
+    fi
+}
+
+# --- Personalizar el prompt ---
+# para bash
+if [ -n "$BASH_VERSION" ]; then
+    PS1='$(show_target)\n\[\e[1;32m\]\u@\h\[\e[0m\]:\w\$ '
+fi
+# para zsh
+if [ -n "$ZSH_VERSION" ]; then
+  PROMPT='$(show_target)
+%F{green}%n%f:%~$ '
+fi
