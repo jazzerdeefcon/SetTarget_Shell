@@ -1,3 +1,4 @@
+
 # SetTarget — función de terminal
 
 **SetTarget** — función shell ligera para gestionar un *target* desde la terminal mostrando IP y nombre de máquina directamente encima del prompt. Ideal si no usas Polybar o quieres un prompt informativo rápido.
@@ -33,8 +34,10 @@
 Clona el repositorio y carga la función en tu shell:
 
 bash
-`` git clone https://github.com/jazzerdeefcon/SetTarget_Shell `` 
-```cd SetTarget_Shell  ```
+```shell
+ git clone https://github.com/jazzerdeefcon/SetTarget_Shell 
+cd SetTarget_Shell
+ ```
 
 ### Crea el directorio si no lo tienes) 
 
@@ -67,8 +70,10 @@ Si no sabes que shell tienes, puedes usar el comando
 
 Ese comando guarda `'10.2.0.15 HackNet'` en `~/.config/bin/target` y el prompt mostrará:
 
-`[10.2.0.15 - HackNet]`
-`TuUsuario@host:~$`
+```
+[10.2.0.15 - HackNet]
+TuUsuario@host:~$
+```
 
 ---
 ### Limpiar el target
@@ -88,20 +93,24 @@ Eso imprime `[IP - nombre]` si existe el archivo de target.
 ## Ejemplos de Personalización:
 
 #para bash
-  ` if [ -n "$BASH_VERSION" ]; then`
-    `PS1='$(show_target)\n\[\e[1;32m\]\u@\h\[\e[0m\]:\w\$ '`
-`fi`
+  ```
+  if [ -n "$BASH_VERSION" ]; then
+    PS1='$(show_target)\n\[\e[1;32m\]\u@\h\[\e[0m\]:\w\$ '
+fi
 
 #para zsh
-`if [ -n "$ZSH_VERSION" ]; then`
-`    PROMPT='$(show_target)`
-`%F{green}%n@%m%f:%~$ '`
-`fi`
+if [ -n "$ZSH_VERSION" ]; then
+    PROMPT='$(show_target)
+%F{green}%n@%m%f:%~$ '
+fi
+```
 
 ## Se veria asi:
 
-`[10.10.10.21 - HackNet]`
-`TuUser@parrot:~/hacklab$`
+```
+[10.10.10.21 - HackNet]
+TuUser@parrot:~/hacklab$
+```
 
 ## Quitando `@\h` en Bash ó  `@%m` en ZSH se veria asi:
 
@@ -109,6 +118,8 @@ Eso imprime `[IP - nombre]` si existe el archivo de target.
 `TuUser:~/hacklab$`
 
 ---
+![Texto alternativo](./settarget.png)
+
 
 ## Integración práctica (ejemplos)
 
@@ -118,8 +129,10 @@ Usar el target en comandos:
 
 Crear alias/wrappers útiles:
 
-`# alias para ssh si existe target st-ssh() { if [ -f ~/.config/bin/target ]; then  read ip name < ~/.config/bin/target
-    ssh "$ip" else  echo  "No hay target definido."  fi }`
+```
+# alias para ssh si existe target st-ssh() { if [ -f ~/.config/bin/target ]; then  read ip name < ~/.config/bin/target
+    ssh "$ip" else  echo  "No hay target definido."  fi }
+```
 
 
 
