@@ -18,17 +18,19 @@ function cleartarget() {
 show_target() {
     if [ -f ~/.config/bin/target ]; then
         read ip name < ~/.config/bin/target
-        echo "[${ip} - ${name}]"
+        echo ""
+#---- Aqui puedes modificar los colores en cada '\e[X;Xm'
+        echo -e "\e[1;31m[\e[0;21;35m${name}\e[0m\e[1;31m]\e[91m-\e[1;31m[\e[1;21;35m${ip}\e[0m\e[1;31m]\e[0m\n"  
     fi
 }
 
 # --- Personalizar el prompt ---
 # para bash
 if [ -n "$BASH_VERSION" ]; then
-    PS1='$(show_target)\n\[\e[1;32m\]\u@\h\[\e[0m\]:\w\$ '
+    PS1='$(show_target)\n\[\e[1;35m\]\u@\h\[\e[0m\]:\w\$ '
 fi
 # para zsh
 if [ -n "$ZSH_VERSION" ]; then
   PROMPT='$(show_target)
-%F{green}%n%f:%~$ '
+%F{red}%n%f:%~$ '
 fi
