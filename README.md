@@ -10,6 +10,7 @@
 - `settarget` / `SetTarget_Shell` — script/función principal.  
 - `README.md` — documentación (este archivo).  
 - `LICENSE` — licencia CC0-1.0 (dominio público).
+- `colores.sh` — Script que imprime todos los colores disponibles de tu terminal para conocer su valor y poder personalizar tu settarget.
 
 ---
 
